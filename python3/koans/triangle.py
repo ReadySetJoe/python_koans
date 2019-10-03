@@ -17,12 +17,12 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    try:
-        if not (a > 0 and b > 0 and c > 0):
-            raise TriangleError
-    except TriangleError as tri_err:
-        pass
-
+    x = sorted([a,b,c])
+    
+    if not (a > 0 and b > 0 and c > 0):
+        raise TriangleError("My message")
+    elif x[2]>(x[0]+x[1]):
+        raise TriangleError('my message')
     else:
         if len(set([a,b,c]))==1:
             return 'equilateral'
@@ -32,6 +32,8 @@ def triangle(a, b, c):
             return 'scalene'
         else:
             return 'wtf'
+
+
 
             
             
